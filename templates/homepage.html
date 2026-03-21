@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block content%}
+<div class="hero-section rounded-1">
+    <h1 class="fw-bold">Find Verified Properties Easily</h1>
+    <p class="lead">No brokers. No scans. Just trusted homes.</p>
+    <a href="#" class="btn btn-light btn-lg mt-2">Browse Properties</a>
+
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">How It Works</h2>
+    <div class="row text-center">
+
+        <div class="col-md-4">
+            <div class="card shadow p-4 h-100">
+                <h4 class="text-primary">1. Verified Listings</h4>
+                <p>Our agents physically verify every property before listing.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow p-4 h-100">
+                <h4 class="text-primary">2. Browse Easily</h4>
+                <p>Search through different categories and find your perfect space.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow p-4 h-100">
+                <h4 class="text-primary">3. Contact Directly</h4>
+                <p>Pay a small fee and connect directly with the landlord.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Browse by Category</h2>
+    <div class="row text-center">
+
+        <div class="col-md-3 mb-3">
+            <div class="card p-3 shadow h-100">
+                <h5>Hostels</h5>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card p-3 shadow h-100">
+                <h5>Single/Double Rooms</h5>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card p-3 shadow h-100">
+                <h5>Houses</h5>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card p-3 shadow h-100">
+                <h5>Hotels, Apartments & Guest Houses</h5>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Why Choose Property Connect?</h2>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">✅Verified properties only</li>
+                <li class="list-group-item">✅No middlemen or brokers</li>
+                <li class="list-group-item">✅Fast and easy property search</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">✅Trusted Agents</li>
+                <li class="list-group-item">✅Affordable contact fee</li>
+                <li class="list-group-item">✅Reliable and secure platform</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Featured Properties</h2>
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <img src="{% static 'images/single_room.jfif' %}" alt="Single Selft Contained Room" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Single Self-Contained</h5>
+                    <p>Location: Nkumba, Entebbe</p>
+                    <p class="text-primary fw-bold">UGX. 150,000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow">
+                <img src="{% static 'images/double_room.jfif' %}" alt="Single Selft Contained Room" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Double Room</h5>
+                    <p>Location: Mpala, Entebbe</p>
+                    <p class="text-primary fw-bold">UGX. 500,000</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow">
+                <img src="{% static 'images/apartment.jfif' %}" alt="Single Selft Contained Room" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Apartment</h5>
+                    <p>Location: Katabi, Entebbe</p>
+                    <p class="text-primary fw-bold">UGX. 800,000</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container mt-5 text-center">
+    <div class="p-5 bg-primary text-white rounded-3">
+        <h3>Ready to Find Your Next Home?</h3>
+        <p>Start browsing verified properties today.</p>
+        <a href="#" class="btn btn-light">Get Started</a>
+    </div>
+</div>
+
+{% endblock %}

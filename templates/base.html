@@ -1,15 +1,63 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>PropertConnect | Homepage</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
+
 <body>
-    <h1 class="text-primary">Welcome to my homepage</h1>
-    <button class="btn btn-warning">Test Button</button>
-    <button class="btn btn-success">Test Button</button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'homepage' %}">propertyConnectUG</a>
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Agents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-light text-dark ms-3 px-3" href="#">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <div class="text-center">
+            <p><strong>Property Connect</strong></p>
+            <p>Head Office: Entebbe, Uganda</p>
+            <p>Phone: +256 787 360 381</p>
+            <p>Email: info@propertyconnect.com</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; {% now 'Y' %} Property Connect | Website Developed by Kamate Group Ltd</p>
+    </div>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
 </body>
+
 </html>
