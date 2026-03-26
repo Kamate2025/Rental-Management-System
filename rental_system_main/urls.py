@@ -16,11 +16,21 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', views.homepage, name='homepage'),
-    path('learn/', views.learn, name='learn'),
+    path('learn/', views.learn, name='learn'), #Remove this on deployment
+    # path('login/', views.login, name='login'), #Pushed to user_management app
+    path('user_management/', include('user_management.urls')),
+    path('about_us/', views.about_us, name='about_us'),
+    path('settings/', views.settings, name='settings'),
+    path('dashboard/', views.dashboard, name='dashboard'),
+    path('dashboard_overview/', views.dashboard_overview, name='dashboard_overview'),
+    path('properties/', include('properties.urls')),
+    path('agents/', include('agents.urls')),
+    path('payments/', include('payments.urls')),
+    path('summary_report/', include('summary_report.urls')),
 ]
