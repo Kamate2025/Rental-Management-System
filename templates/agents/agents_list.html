@@ -2,11 +2,96 @@
 
 {% block dashboard_content %}
 
-<div class="row-md-6">
-    <div><h4>This is the list of Agents</h4></div>
+<h3 class="mb-4 text-primary">Agents Management</h3>
+
+<!-- 🔷 SUMMARY -->
+<div class="row mb-4">
+
+    <div class="col-md-3">
+        <div class="card p-3 text-center shadow">
+            <h6>Total Agents</h6>
+            <h3 class="text-primary">8</h3>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 text-center shadow">
+            <h6>Active</h6>
+            <h3 class="text-success">5</h3>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 text-center shadow">
+            <h6>Suspended</h6>
+            <h3 class="text-danger">2</h3>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card p-3 text-center shadow">
+            <h6>Warnings</h6>
+            <h3 class="text-warning">1</h3>
+        </div>
+    </div>
+
 </div>
-<div class="row-md-6">
-    <div><h3>Add the Button to manage Agent Applications here</h3></div>
+
+<!-- 🔷 TABLE -->
+<div class="card shadow p-3">
+
+    <div class="d-flex justify-content-between mb-3">
+        <h5 class="text-primary">All Agents</h5>
+        <button class="btn btn-primary btn-sm">+ Add Agent</button>
+    </div>
+
+    <table class="table table-hover align-middle">
+
+        <thead class="table-primary">
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Properties</th>
+                <th>Status</th>
+                <th>Update</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>John Doe</td>
+                <td>agent_john</td>
+                <td>0787000001</td>
+                <td>Entebbe</td>
+                <td>12</td>
+
+                <td>
+                    <select class="form-select form-select-sm">
+                        <option>Active</option>
+                        <option>Suspended</option>
+                        <option>Warning</option>
+                    </select>
+                </td>
+
+                <td>
+                    <button class="btn btn-sm btn-success">Update</button>
+                </td>
+
+                <td>
+                    <button class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></button>
+                    <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></button>
+                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                </td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
 </div>
 
 {% endblock %}

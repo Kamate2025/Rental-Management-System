@@ -1,23 +1,24 @@
 body {
-    background-color: #f5f9ff;
+    font-family: 'Inter', 'sans-serif';
 }
 
+
 .navbar-brand {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 1.5rem;
 }
 
 .hero-section {
-    background: linear-gradient(to right, #0d6efd, #4dabf7);
+    background: linear-gradient(rgba(170, 172, 255, 0.65), #0004ffa6, url("{% static 'images/houses_for_rent.jpg' %}"));
+    background-size: cover;
+    background-position: center;
     color: white;
-    padding: 30px 20px;
+    padding: 160px 0 100px;
     text-align: center;
 }
 
-.footer {
-    background-color: #0d6efd;
-    color: white;
-    text-align: center;
-    margin-top: 50px;
-    padding: 15px 0;
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+    transition: all 0.3s ease;
 }
