@@ -41,7 +41,7 @@
 
     <div class="d-flex justify-content-between mb-3">
         <h5 class="text-primary">Payment Records</h5>
-        <button class="btn btn-primary btn-sm">+ Add Payment</button>
+        <a href="{% url 'add_payment' %}" class="btn btn-primary btn-sm">+ Add Payment</a>
     </div>
 
     <table class="table table-hover align-middle">
@@ -58,19 +58,21 @@
         </thead>
 
         <tbody>
-
+            {% for p in payments %}
             <tr>
-                <td>12 Apr 2026</td>
-                <td>20,000</td>
-                <td>TX12345</td>
-                <td>agent_john</td>
-                <td>Mr. Kato</td>
+                <td>{{ p.date }}</td>
+                <td>{{ p.amount }}</td>
+                <td>{{ p.transaction_id }}</td>
+                <td>{{ p.agent.name }}</td>
+                <td>{{ p.landlord.owner_name }}</td>
                 <td>
-                    <button class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></button>
-                    <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></button>
-                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                    <a href="{% url 'view_payment' p.pk %}" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></button>
+                    <a href="{% url 'edit_payment' p.pk %}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a>
+                    <a href="{% url 'delete_payment' p.pk %}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
                 </td>
             </tr>
+            {% endfor %}
+            
 
         </tbody>
 

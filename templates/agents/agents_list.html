@@ -42,7 +42,7 @@
 
     <div class="d-flex justify-content-between mb-3">
         <h5 class="text-primary">All Agents</h5>
-        <button class="btn btn-primary btn-sm">+ Add Agent</button>
+        <a href="{% url 'add_agent' %}" class="btn btn-primary btn-sm">+ Add Agent</a>
     </div>
 
     <table class="table table-hover align-middle">
@@ -55,38 +55,34 @@
                 <th>Address</th>
                 <th>Properties</th>
                 <th>Status</th>
-                <th>Update</th>
                 <th>Actions</th>
             </tr>
         </thead>
 
         <tbody>
-
+            {% if agents_list %}
+            {% for a in agents_list %}
             <tr>
-                <td>John Doe</td>
-                <td>agent_john</td>
-                <td>0787000001</td>
-                <td>Entebbe</td>
-                <td>12</td>
+                <td>{{ a.name }}</td>
+                <td>{{ a.username }}</td>
+                <td>{{ a.phone }}</td>
+                <td>{{ a.address }}</td>
+                <td>{{ a.no_of_properties }}</td>
 
                 <td>
                     <select class="form-select form-select-sm">
-                        <option>Active</option>
-                        <option>Suspended</option>
-                        <option>Warning</option>
+                        <option>{{ a.status }}</option>
                     </select>
                 </td>
 
                 <td>
-                    <button class="btn btn-sm btn-success">Update</button>
-                </td>
-
-                <td>
-                    <button class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></button>
-                    <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></button>
-                    <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+                    <a href="{% url 'view_agent' a.pk %}" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></a>
+                    <a href="{% url 'edit_agent' a.pk %}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></a >
+                    <a href="{% url 'delete_agent' a.pk %}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
                 </td>
             </tr>
+            {% endfor %}
+            {% endif %}
 
         </tbody>
 
